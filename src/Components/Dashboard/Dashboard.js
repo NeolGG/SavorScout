@@ -1,5 +1,5 @@
 import React from 'react'
-import Communities from './Components/Communities/Communities.js'
+import Communities from '../Communities/Communities.js'
 
 export default function Dashboard() {
     return (
