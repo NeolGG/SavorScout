@@ -1,6 +1,6 @@
 import React from 'react'
-import Components from './components/Components';
-import * as Env from "./environments";
+import Components from './Components/Components'
+import * as Env from "./environment"
 import Parse from "parse";
 
 // Initialize Parse with the provided application ID and JavaScript key
