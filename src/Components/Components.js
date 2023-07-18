@@ -4,6 +4,7 @@ import React from "react";
 import Friends from "./Friends/Friends";
 import RestaurantRec from "./RestaurantRec/RestaurantRec";
 import Dashboard from "./Dashboard/Dashboard";
+import Ratings from "./Ratings/Ratings";
 
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 
@@ -28,6 +29,10 @@ export default function Components() {
           <Route
             path="/communities"
             element={<ProtectedRoute path="/restuarantrecs" element={RestaurantRec} />}
+          />
+          <Route
+            path="/ratings"
+            element={<ProtectedRoute path="/ratings" element={Ratings} />}
           />
   
           <Route path="/auth" element={<AuthModule />} /> 
