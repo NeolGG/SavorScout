@@ -27,7 +27,7 @@ const VerifiedList = () => {
             {users.map((user) => (
               <li key={"1" + user.id}> 
                 {" "}
-                {user.id} | {user.get("username")} | {user.get("email")}
+                {user.get("username")} | {user.get("firstName") }  {user.get("lastName") }
               </li> 
             ))}
           </ul>
