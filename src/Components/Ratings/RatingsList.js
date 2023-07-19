@@ -20,16 +20,16 @@ const RatingsList = () => {
           <hr />
           These are the ratings
           <div>
-            <p> Lesson by ID: </p>
+            <p> </p>
             {/* Check that the lesson object exists */}
             {ratings.length > 0 && (
               <ul>
                 {/* Using getter for lesson Object to display name */}
                 {ratings.map((rating) => (
-                  <li key={"1" + rating.id}>
+                  <li key={"1" + rating.id}> 
                     {" "}
-                    {rating.id} | {rating.get("Rating")}{" "}
-                  </li>
+                    {rating.id} | {rating.get("Rating")} | {rating.get("Restaurant").get("Name")} | <br />{rating.get("User").get("username")} {" "}
+                  </li> 
                 ))}
               </ul>
             )}
