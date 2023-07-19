@@ -1,8 +1,8 @@
 // VerifiedService.js
 import Parse from "parse";
 
-export let Verified = {};
-Verified.collection = [];
+export let VerifiedCont = {};
+VerifiedCont.collection = [];
 
 export const getAllVerifiedUsers = () => {
   const User = Parse.Object.extend("User");

@@ -35,11 +35,13 @@ const Ratings = () => {
       <div>
           <hr />
           These are the ratings
+          <hr/>
           <div>
             <RatingsList ratings ={ratings}/>
           </div>
           <hr />
           These are the Verified ratings
+          <hr />
           <div>
             <RatingsvList vRatings = {vRatings}/>
           </div>

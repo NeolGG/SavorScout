@@ -1,8 +1,6 @@
 const RatingsvList = ({vRatings}) => {
     return (
       <div>
-        <hr />
-        These are the Verified ratings
         <div>
           <p> </p>
           {vRatings.length > 0 && (

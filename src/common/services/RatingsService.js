@@ -20,10 +20,10 @@ export const getAllVerifiedRatings = () => {
     query.include("User");
 
     const User = Parse.Object.extend("User"); // makes new object with the user class
-    const userQuery = new Parse.Query(User); // gets query of 
-    userQuery.equalTo("Verified", true);
+    const userQuery = new Parse.Query(User); // gets query of users 
+    userQuery.equalTo("Verified", true); // filters out only verified users
     
-    query.matchesQuery("User", userQuery); // Add this line to filter by the "Verified" attribute of the User class
+    query.matchesQuery("User", userQuery); // Add this line to filter by the "Verified" attribute of the User class 
 
     return query.find().then((results) => {
         return results;

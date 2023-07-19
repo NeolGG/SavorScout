@@ -1,8 +1,6 @@
 const RatingsList = ({ratings}) => {
       return (
         <div>
-          <hr />
-          These are the ratings
           <div>
             <p> </p>
             {ratings.length > 0 && (
