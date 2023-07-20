@@ -29,3 +29,15 @@ export const getAllVerifiedRatings = () => {
         return results;
     });
 }
+
+export const createRating = (rating,restObject)=>{
+    const Rating = new Parse.Object("Rating");
+    Rating.set("User",Parse.User.current());
+    Rating.set("Rating",parseInt(rating));
+    Rating.set("Restaurant",restObject);
+    Rating.save().then((savedRating) => {
+        console.log("Rating saved:", savedRating);
+    }).catch((error) => {
+        console.error("Error saving Rating:", error);
+    });
+}

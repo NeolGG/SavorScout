@@ -1,5 +1,6 @@
 import { useState, useEffect,React } from 'react';
-import { getAllRestaurants } from '../../common/services/RestaurantService';
+import { getAllRestaurants,getRestaurantbyName } from '../../common/services/RestaurantService';
+import { createRating } from '../../common/services/RatingsService';
 import WriteRatingForm from './WriteRatingForm'
 
 export default function WriteRating() {
@@ -12,10 +13,15 @@ export default function WriteRating() {
     }, []);
 
     const [add, setAdd] = useState(false);
+    const [temp, setTemp] = useState();
 
 
     const handleRestChange  = (event) => {
         console.log("restchange",event.target.value);
+        getRestaurantbyName(event.target.value).then((tempRest) => {
+            setTemp(tempRest);
+        });
+        console.log("temp",temp); 
       };
 
     const handleRatingChange = (event) =>{
@@ -26,9 +32,14 @@ export default function WriteRating() {
         console.log("");
     }
 
+    const handleOnSubmit = (event) =>{
+        event.preventDefault();
+        console.log(event.target);
+    }
+
     return (
         <div>
-            <WriteRatingForm restaurants={restaurants} restChange={handleRestChange} ratingChange={handleRatingChange} onClick={handleOnClick}/>
+            <WriteRatingForm restaurants={restaurants} restChange={handleRestChange} ratingChange={handleRatingChange} onClick={handleOnClick} onSubmit={handleOnSubmit}/>
         </div>
     )
 }

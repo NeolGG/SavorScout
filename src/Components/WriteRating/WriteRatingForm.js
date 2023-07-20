@@ -1,6 +1,6 @@
 import React from "react";
 
-const WriteRatingForm= ({ ratingChange, restChange, onClick, restaurants}) => {
+const WriteRatingForm= ({ ratingChange, restChange, onClick, restaurants,onSubmit}) => {
     //sorts alphabetically
     const sortedRestaurants = restaurants.sort((a, b) =>
     a.get("Name").localeCompare(b.get("Name"))
@@ -11,14 +11,14 @@ const WriteRatingForm= ({ ratingChange, restChange, onClick, restaurants}) => {
       <hr />
       Write a new review
       <hr />
-      <form>
+      <form onSubmit ={onSubmit}>
         <label>
         Restaurant:
       {sortedRestaurants.length > 0 && (
           <select onChange ={restChange}>
             <option value ="">Select a restaurant</option>
             {restaurants.map((restaurant) => (
-              <option key={"1" + restaurant.id} value = {restaurant.get("objectId")}>
+              <option key={"1" + restaurant.id} value = {restaurant.get("Name")}>
                 {restaurant.get("Name")}
               </option>
             ))}

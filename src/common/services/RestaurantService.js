@@ -28,3 +28,15 @@ export const getServicebyName = (name) => {
         return results;
     });
 };
+
+// get specific restaurant by name
+export const getRestaurantbyName = (name) =>{
+    //console.log("loooking for",name);
+    const Restaurant = Parse.Object.extend("Restaurant");
+    const query = new Parse.Query(Restaurant)
+    query.equalTo("Name",name);
+    return query.find().then((results) => {
+        //console.log("found",results);
+        return results;
+    });
+}
