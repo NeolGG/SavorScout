@@ -1,18 +1,20 @@
 import React from 'react';
-import Ratings from '../NewRatings/NewRatings';
+import { Link, Outlet } from 'react-router-dom';
+import NewRatings from '../NewRatings/NewRatings';
 import Verified from '../Verified/Verified';
-import SearchBar from './SearchBar';
-import FriendList from './FriendList';
-import UserProfile from './UserProfile';
 
 const Dashboard = () => {
   return (
     <div>
-      <UserProfile />
-      <SearchBar />
-      <Ratings />
-      <Verified />
-      <FriendList />
+      <ul>
+        <li>
+          <Link to="/dashboard/newratings">New Ratings</Link>
+        </li>
+        <li>
+          <Link to="/dashboard/verifiedusers">Verified Users</Link>
+        </li>
+      </ul>
+      <Outlet />
     </div>
   );
 }
