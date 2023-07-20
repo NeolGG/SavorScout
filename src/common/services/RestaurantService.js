@@ -10,3 +10,12 @@ export const getAllRestaurants = () => {
         return results;
     });
 };
+
+export const getCuisinebyName = (name) => {
+    const Cuisine = Parse.Object.extend("Cuisine");
+    const query = new Parse.Object.Query(Cuisine)
+    query.equalTo("Cusine",name);
+    return query.find().then((results) => {
+        return results;
+    });
+}

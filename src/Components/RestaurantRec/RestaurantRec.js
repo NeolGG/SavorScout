@@ -1,6 +1,7 @@
 import { useState, useEffect,React } from 'react';
 import { getAllRestaurants,RestCont } from '../../common/services/RestaurantService';
 import RestaurantRecList from './RestaurantRecList';
+import RestaurantRecForm from './RestaurantRecForm';
 
 export default function RestaurantRec() {
   const [restaurants, setRestaurants] = useState([]);
@@ -19,6 +20,7 @@ export default function RestaurantRec() {
   return (
     <div>
       Verified Users
+      <RestaurantRecForm/>
       <RestaurantRecList restaurants = {restaurants}/>
     </div>
   )

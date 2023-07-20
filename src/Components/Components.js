@@ -24,10 +24,10 @@ export default function Components() {
             element={<ProtectedRoute path="/" element={Dashboard} />}
           /> 
   
-          {/* <Route
+          <Route
             path="/friends"
             element={<ProtectedRoute path="/friends" element={Friends} />}
-          /> */}
+          />
           <Route
             path="/restaurantrecs"
             element={<ProtectedRoute path="/restuarantrecs" element={RestaurantRec} />}
