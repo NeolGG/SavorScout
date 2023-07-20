@@ -3,8 +3,6 @@ import { getAllRatings,RatingsCont, getAllVerifiedRatings } from '../../common/s
 import RatingsList from './RatingsList'
 import RatingsvList from './RatingsvList'
 
-
-
 const Ratings = () => {
   const [ratings, setRatings] = useState([]);
   const [vRatings, setvRatings] = useState([]);
