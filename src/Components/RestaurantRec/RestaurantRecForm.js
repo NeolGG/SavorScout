@@ -1,12 +1,12 @@
 import React from "react"
 
-const RestaurantRecForm = ({onChange}) =>{
+const RestaurantRecForm = ({cuisineChange}) =>{
     return (
     <div>
       <hr />
       This is the main form child component.
       <form>
-        <select onChange={onChange}>
+        <select onChange={cuisineChange}>
           <option value="">All</option>
           <option value="American">American</option>
           <option value="Italian">Italian</option>

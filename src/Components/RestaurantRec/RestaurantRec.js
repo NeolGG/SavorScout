@@ -5,7 +5,8 @@ import RestaurantRecForm from './RestaurantRecForm';
 
 export default function RestaurantRec() {
   const [restaurants, setRestaurants] = useState([]);
-  const [cuisine, setCuisine] = useState('');
+  const [cuisine, setCuisine] = useState();
+  const [service, setService] = useState();
 
   useEffect(() => {
     if (cuisine) {
@@ -14,6 +15,9 @@ export default function RestaurantRec() {
         console.log("filtered",restaurants);
         setRestaurants(restaurants);
       });
+      const testcont = [cuisine,service];
+      console.log("test",testcont.length);
+      console.log(testcont);
     } else {
       getAllRestaurants().then((restaurants) => {
         console.log("notfiltered",restaurants);
@@ -22,16 +26,18 @@ export default function RestaurantRec() {
     }
   }, [cuisine]);
 
-  const filterChange = (event) => {
-    const selectedCuisine = event.target.value;
-    console.log(selectedCuisine);
-    setCuisine(selectedCuisine);
+  const cuisineChange = (event) => {
+    setCuisine(event.target.value);
+  };
+
+  const serviceChange = (event) => {
+    setService(event.target.value);
   };
 
   return (
     <div>
       Restaurant
-      <RestaurantRecForm onChange={filterChange}/>
+      <RestaurantRecForm cuisineChange={cuisineChange}/>
       <RestaurantRecList restaurants = {restaurants}/>
     </div>
   )
