@@ -2,7 +2,7 @@ const RestaurantRecList = ({restaurants}) => {
   return (
     <div>
       <hr />
-      These are the verified users
+      These are Restaurants
       <div>
         <p> </p>
         {restaurants.length > 0 && (
@@ -10,7 +10,7 @@ const RestaurantRecList = ({restaurants}) => {
             {restaurants.map((restaurant) => (
               <li key={"1" + restaurant.id}> 
                 {" "}
-                {restaurant.get("username")} | {restaurant.get("firstName") }  {restaurant.get("lastName") }
+                {restaurant.get("Name")} | {restaurant.get("Cuisine") } | {restaurant.get("Service") }
               </li> 
             ))}
           </ul>
