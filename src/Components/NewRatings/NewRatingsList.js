@@ -8,9 +8,7 @@ const NewRatingsList = ({ratings}) => {
                 {ratings.map((rating) => (
                   <li key={"1" + rating.id}> 
                     {" "}
-                    {rating.get("User").get("firstName")} {rating.get("User").get("lastName")} <br />
-                    {rating.get("Restaurant").get("Name")}<br />
-                    {rating.get("Rating")} Stars
+                    {rating.get("User").get("firstName")} {rating.get("User").get("lastName")} rated <i>{rating.get("Restaurant").get("Name")}</i> for <b>{rating.get("Rating")} Stars</b>
                   </li> 
                 ))}
               </ul>
