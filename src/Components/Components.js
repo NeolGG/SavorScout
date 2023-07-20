@@ -28,7 +28,7 @@ export default function Components() {
             element={<ProtectedRoute path="/friends" element={Friends} />}
           />
           <Route
-            path="/communities"
+            path="/restaurantrecs"
             element={<ProtectedRoute path="/restuarantrecs" element={RestaurantRec} />}
           />
           <Route
