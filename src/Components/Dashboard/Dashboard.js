@@ -1,5 +1,5 @@
 import React from 'react';
-import Ratings from '../Ratings/Ratings';
+import Ratings from '../NewRatings/NewRatings';
 import Verified from '../Verified/Verified';
 import SearchBar from './SearchBar';
 import FriendList from './FriendList';

@@ -1,4 +1,4 @@
-const RatingsvList = ({vRatings}) => {
+const VerRatingsList = ({vRatings}) => {
     return (
       <div>
         <div>
@@ -20,4 +20,4 @@ const RatingsvList = ({vRatings}) => {
     );
 }
 
-export default RatingsvList
+export default VerRatingsList

@@ -1,4 +1,4 @@
-const RatingsList = ({ratings}) => {
+const NewRatingsList = ({ratings}) => {
       return (
         <div>
           <div>
@@ -20,4 +20,4 @@ const RatingsList = ({ratings}) => {
       );
 }
 
-export default RatingsList
+export default NewRatingsList
