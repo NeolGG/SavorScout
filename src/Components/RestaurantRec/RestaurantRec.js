@@ -1,44 +1,35 @@
 import { useState, useEffect,React } from 'react';
-import { getAllRestaurants,getCuisinebyName,RestCont } from '../../common/services/RestaurantService';
+import { getAllRestaurants,getCuisinebyName, getServicebyName} from '../../common/services/RestaurantService';
 import RestaurantRecList from './RestaurantRecList';
 import RestaurantRecForm from './RestaurantRecForm';
 
 export default function RestaurantRec() {
   const [restaurants, setRestaurants] = useState([]);
-  const [cuisine, setCuisine] = useState();
-  const [service, setService] = useState();
-
+  const [filters,setFilters] = useState({cuisine: '',service: ''});
   useEffect(() => {
-    if (cuisine) {
-      console.log("cuisine",cuisine);
-      getCuisinebyName(cuisine).then((restaurants) => {
+    if (filters.cuisine) {
+      console.log("cuisine",filters.cuisine);
+      getCuisinebyName(filters.cuisine).then((restaurants) => {
         console.log("filtered",restaurants);
         setRestaurants(restaurants);
       });
-      const testcont = [cuisine,service];
-      console.log("test",testcont.length);
-      console.log(testcont);
     } else {
       getAllRestaurants().then((restaurants) => {
         console.log("notfiltered",restaurants);
         setRestaurants(restaurants);
       });
     }
-  }, [cuisine]);
+  }, [filters.cuisine,]);
 
-  const cuisineChange = (event) => {
-    setCuisine(event.target.value);
-  };
-
-  const serviceChange = (event) => {
-    setService(event.target.value);
+  const handleFilterChange = (name, value) => {
+    setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
   };
 
   return (
     <div>
       Restaurant
-      <RestaurantRecForm cuisineChange={cuisineChange}/>
+      <RestaurantRecForm onChange = {handleFilterChange}/>
       <RestaurantRecList restaurants = {restaurants}/>
     </div>
-  )
+  );
 }
