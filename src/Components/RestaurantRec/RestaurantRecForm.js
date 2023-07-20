@@ -7,7 +7,7 @@ const RestaurantRecForm = ({onChange}) =>{
       This is the main form child component.
       <form>
         <select onChange={onChange}>
-          <option value="">Select an option</option>
+          <option value="">All</option>
           <option value="American">American</option>
           <option value="Italian">Italian</option>
           <option value="French">French</option>
