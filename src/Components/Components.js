@@ -20,9 +20,8 @@ export default function Components() {
       <Router>
       <Routes>
         <Route path="/" element={<ProtectedRoute path="/" component={Dashboard} />} />
-        <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} />
-        <Route path="/dashboard/newratings" element={<ProtectedRoute component={NewRatings} />} />
-        <Route path="/dashboard/verifiedusers" element={<ProtectedRoute component={Verified} />} />
+        <Route path="/newratings" element={<ProtectedRoute component={NewRatings} />} />
+        <Route path="/verifiedusers" element={<ProtectedRoute component={Verified} />} />
         <Route path="/auth" element={<AuthModule />} />
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />
