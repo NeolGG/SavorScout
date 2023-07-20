@@ -1,7 +1,20 @@
-import React from 'react'
+import React from 'react';
+import Ratings from '../Ratings/Ratings';
+import Verified from '../Verified/Verified';
+import SearchBar from './SearchBar';
+import FriendList from './FriendList';
+import UserProfile from './UserProfile';
 
-export default function Dashboard() {
+const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
+    <div>
+      <UserProfile />
+      <SearchBar />
+      <Ratings />
+      <Verified />
+      <FriendList />
+    </div>
+  );
 }
+
+export default Dashboard;
