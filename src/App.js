@@ -12,7 +12,6 @@ Parse.serverURL = Env.SERVER_URL;
 // App component as the entry point of the application
 export default function App() {
   return (
-   
     <Components />
   )
 }
