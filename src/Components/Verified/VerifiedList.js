@@ -10,14 +10,13 @@ const VerifiedList = ({ users, ratings }) => {
             {users.map((user) => (
               <li key={"1" + user.id}> 
                 {" "}
-                {user.get("username")} | {user.get("firstName") }  {user.get("lastName") }
+                {user.get("firstName") }  {user.get("lastName") }
               </li> 
             ))}
           </ul>
         )}
       </div>{" "}
       <hr />
-      Verified Users' Ratings
       <div>
         <p> </p>
         {ratings.length > 0 && (

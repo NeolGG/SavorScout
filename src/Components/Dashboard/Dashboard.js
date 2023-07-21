@@ -7,13 +7,22 @@ import RestaurantRec from '../RestaurantRec/RestaurantRec';
 const Dashboard = () => {
   return (
     <div>
-      <RestaurantRec/>
       <ul>
         <li>
           <Link to="/newratings">New Ratings</Link>
         </li>
         <li>
           <Link to="/verifiedusers">Verified Users</Link>
+        </li>
+        <li>
+        <Link to="/restaurantrec">Restaurants</Link>
+        </li>
+        <li>
+          <Link to="/verifiedratings">Verfied ratings</Link>
+        </li>
+
+        <li>
+          <Link to="/writerating">Write Rating</Link>
         </li>
       </ul>
       <Outlet />

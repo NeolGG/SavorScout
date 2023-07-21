@@ -19,7 +19,7 @@ export default function RestaurantRec() {
         setRestaurants(restaurants);
       });
     }
-  }, [filters.cuisine,]);
+  }, [filters.cuisine]);
 
   const handleFilterChange = (name, value) => {
     setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));

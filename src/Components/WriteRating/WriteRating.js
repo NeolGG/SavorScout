@@ -14,32 +14,33 @@ export default function WriteRating() {
 
     const [add, setAdd] = useState(false);
     const [temp, setTemp] = useState();
-
+    const [temp2,set2Temp] = useState();
 
     const handleRestChange  = (event) => {
         console.log("restchange",event.target.value);
         getRestaurantbyName(event.target.value).then((tempRest) => {
             setTemp(tempRest);
         });
-        console.log("temp",temp); 
+        console.log("temp",temp[0].id); 
       };
 
     const handleRatingChange = (event) =>{
         console.log("ratingchange",event.target.value);
-    }
-
-    const handleOnClick = (event) => {
-        console.log("");
+        set2Temp(event.target.value);
+        console.log("rating",temp2);
     }
 
     const handleOnSubmit = (event) =>{
         event.preventDefault();
-        console.log(event.target);
+        console.log("clicked");
+        console.log(temp);
+        console.log(temp2);
+        createRating(temp2,temp);
     }
 
     return (
         <div>
-            <WriteRatingForm restaurants={restaurants} restChange={handleRestChange} ratingChange={handleRatingChange} onClick={handleOnClick} onSubmit={handleOnSubmit}/>
+            <WriteRatingForm restaurants={restaurants} restChange={handleRestChange} ratingChange={handleRatingChange} onSubmit={handleOnSubmit}/>
         </div>
     )
 }
