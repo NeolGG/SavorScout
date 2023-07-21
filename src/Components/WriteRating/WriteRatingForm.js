@@ -9,7 +9,7 @@ const WriteRatingForm= ({ ratingChange, restChange, restaurants,onSubmit}) => {
   return (
     <div>
       <hr />
-      Write a new review
+      Make a review
       <hr />
       <form onSubmit ={onSubmit}>
         <label>
@@ -30,6 +30,7 @@ const WriteRatingForm= ({ ratingChange, restChange, restaurants,onSubmit}) => {
         <label>
           Rating:
           <select name ="rating" onChange={ratingChange}>
+            <option value={""}></option>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>

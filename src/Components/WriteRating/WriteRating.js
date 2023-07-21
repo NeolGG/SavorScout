@@ -12,30 +12,24 @@ export default function WriteRating() {
         });
     }, []);
 
-    const [add, setAdd] = useState(false);
-    const [temp, setTemp] = useState();
-    const [temp2,set2Temp] = useState();
+    const [temp, setTemp] = useState("");
+    const [temp2,set2Temp] = useState("");
 
     const handleRestChange  = (event) => {
-        console.log("restchange",event.target.value);
-        getRestaurantbyName(event.target.value).then((tempRest) => {
-            setTemp(tempRest);
-        });
-        console.log("temp",temp[0].id); 
+        setTemp(event.target.value);
       };
 
     const handleRatingChange = (event) =>{
-        console.log("ratingchange",event.target.value);
         set2Temp(event.target.value);
-        console.log("rating",temp2);
     }
 
     const handleOnSubmit = (event) =>{
         event.preventDefault();
-        console.log("clicked");
-        console.log(temp);
-        console.log(temp2);
-        createRating(temp2,temp);
+        if (temp == "" || temp2 == "") {
+            console.log("Choose a rating and restaurant.");
+        } else {
+            createRating(temp2, temp);
+        }
     }
 
     return (

@@ -1,4 +1,5 @@
 import Parse from "parse";
+import { getRestaurantbyName } from "./RestaurantService";
 
 export let RatingsCont = {};
 RatingsCont.collection = [];
@@ -30,11 +31,15 @@ export const getAllVerifiedRatings = () => {
     });
 }
 
-export const createRating = (rating,restObject)=>{
+export const createRating = async (rating,rest)=>{
     const Rating = new Parse.Object("Rating");
     Rating.set("User",Parse.User.current());
     Rating.set("Rating",parseInt(rating));
-    Rating.set("Restaurant",restObject);
+
+    const restObject = await getRestaurantbyName(rest);
+
+    Rating.set("Restaurant",restObject[0]);
+
     Rating.save().then((savedRating) => {
         console.log("Rating saved:", savedRating);
     }).catch((error) => {

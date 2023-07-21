@@ -5,10 +5,10 @@ const RestaurantRecForm = ({onChange}) =>{
     const {name, value} = event.target;
     onChange(name,value);
   };
-    return (
+  return (
     <div>
       <hr />
-      This is the main form child component.
+      Filters
       <form>
         <select name = "cuisine" onChange={handleFilterChange}>
           <option value="">All</option>
