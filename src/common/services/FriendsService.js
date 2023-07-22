@@ -28,3 +28,20 @@ export const getAllFriends = () => {
       });
 }
 
+export const addFriend = (friendUserId) =>{
+  const user = Parse.User.current();
+  const User = Parse.Object.extend('User');
+  const query = new Parse.Query(User);
+  query.get(friendUserId).then((friend) => {
+      const friendsRelation = user.relation('Friends');
+      friendsRelation.add(friend);
+      return user.save(); // Save the updated user object with the new relation
+    })
+    .then((updatedUser) => {
+      console.log('Friend added:', friendUserId);
+      return getAllFriends();
+    })
+    .catch((error) => {
+      console.error('Error adding friend:', error);
+    });
+}

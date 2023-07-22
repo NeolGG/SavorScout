@@ -15,7 +15,6 @@ export default function Friends() {
     });
   }, []);
 
-
   return (
     <div>
       <h1>{user.length > 0 ? user[0].attributes.firstName : ''}'s Friends</h1>
