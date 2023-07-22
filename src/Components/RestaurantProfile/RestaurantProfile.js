@@ -20,16 +20,6 @@ export default function RestaurantProfile() {
 
     const rest = restaurant ? restaurant[0].attributes : null;
     
-    let dollars;
-    if (rest) {
-        dollars = [];
-        for (let i = 0; i < rest.Price; i++) {
-          dollars.push("$");
-        }
-    } else {
-        dollars = null;
-    }// converts dollar number to string
-    
     return (
         <div>
             {rest ? (
@@ -38,7 +28,9 @@ export default function RestaurantProfile() {
                     <p>{rest.Name}</p>
                     <p>{rest.Cuisine}</p>
                     <p>{rest.Service}</p>
-                    <p>{dollars}</p>
+                    <div>
+                        {'$'.repeat(rest.Price)}
+                    </div>
                 </div>
             ) : (
                 <p> </p>
