@@ -1,13 +1,13 @@
 import React from "react";
 
-const WriteRatingForm= ({ ratingChange, restChange, restaurants,onSubmit}) => {
+const WriteRatingForm= ({ ratingChange, restChange, restaurants, onSubmit}) => {
     //sorts alphabetically
     const sortedRestaurants = restaurants.sort((a, b) =>
     a.get("Name").localeCompare(b.get("Name"))
   );
 
   return (
-    <div>
+    <div className="form-container">
       <hr />
       Make a review
       <hr />
@@ -47,5 +47,3 @@ const WriteRatingForm= ({ ratingChange, restChange, restaurants,onSubmit}) => {
 };
 
 export default WriteRatingForm;
-
-

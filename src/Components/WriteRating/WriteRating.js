@@ -1,7 +1,8 @@
+import './WriteRating.css';
 import { useState, useEffect,React } from 'react';
 import { getAllRestaurants } from '../../common/services/RestaurantService';
 import { createRating } from '../../common/services/RatingsService';
-import WriteRatingForm from './WriteRatingForm'
+import WriteRatingForm from './WriteRatingForm';
 
 export default function WriteRating() {
     const [restaurants, setRestaurants] = useState([]);
@@ -33,7 +34,7 @@ export default function WriteRating() {
     }
 
     return (
-        <div>
+        <div className="write-rating-container">
             <WriteRatingForm restaurants={restaurants} restChange={handleRestChange} ratingChange={handleRatingChange} onSubmit={handleOnSubmit}/>
         </div>
     )
