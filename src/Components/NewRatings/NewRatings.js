@@ -1,8 +1,7 @@
 import React,{ useState, useEffect} from 'react'
 import { getAllRatings,RatingsCont } from '../../common/services/RatingsService'
 import NewRatingsList from './NewRatingsList';
-import './NewRatings.css';  // Ensure you import your css file here
-
+import './NewRatings.css';  
 const NewRatings = () => {
   const [ratings, setRatings] = useState([]);
 
