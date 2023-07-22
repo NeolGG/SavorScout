@@ -10,7 +10,6 @@ const VerRatings = () => {
         setvRatings(RatingsCont.collection);
       } else {
         getAllVerifiedRatings().then((vRatings) => {
-          console.log(vRatings);
           setvRatings(vRatings);
         });
       }

@@ -21,3 +21,4 @@ const NewRatingsList = ({ratings}) => {
 }
 
 export default NewRatingsList;
+
