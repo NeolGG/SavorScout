@@ -1,3 +1,4 @@
+import './Verified.css';
 import React, { useState, useEffect } from 'react';
 import { getAllVerifiedUsers, VerifiedCont } from '../../common/services/VerifiedService';
 import VerifiedList from './VerifiedList';
@@ -18,7 +19,6 @@ const Verified = () => {
 
   return (
     <div>
-      <h2>Verified Users</h2>
       <VerifiedList users={users} />
     </div>
   );
