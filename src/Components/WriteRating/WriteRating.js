@@ -6,9 +6,9 @@ import WriteRatingForm from './WriteRatingForm'
 export default function WriteRating() {
     const [restaurants, setRestaurants] = useState([]);
     useEffect(() => {
-        getAllRestaurants().then((restaurants) => {
-          console.log("notfiltered",restaurants);
-          setRestaurants(restaurants);
+        const query = getAllRestaurants();
+        query.find().then((results) => {
+            setRestaurants(results);
         });
     }, []);
 

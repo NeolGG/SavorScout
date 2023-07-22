@@ -29,11 +29,11 @@ export const getServicebyName = (name) => {
 };
 
 
-export const getRestaurantbyName = (name) =>{ 
+export const getRestaurantbyID = (ID) =>{ 
     //console.log("looking for",name);
     const Restaurant = Parse.Object.extend("Restaurant");
     const query = new Parse.Query(Restaurant)
-    query.equalTo("Name",name);
+    query.equalTo("objectId",ID);
     return query.find().then((results) => {
         //console.log("found",results);
         return results;

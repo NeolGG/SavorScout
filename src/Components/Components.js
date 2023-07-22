@@ -35,42 +35,5 @@ export default function Components() {
         <Route path="*" element={<Navigate to="/auth" replace />} />
       </Routes>
     </Router>
-
-  //     <Router>
-  //       <Routes>
-  //         <Route
-  //           path="/"
-  //           element={<ProtectedRoute path="/" element={Dashboard} />}
-  //         /> 
-  
-  //         <Route
-  //           path="/friends"
-  //           element={<ProtectedRoute path="/friends" element={Friends} />}
-  //         />
-  //         <Route
-  //           path="/restaurantrecs"
-  //           element={<ProtectedRoute path="/restuarantrecs" element={RestaurantRec} />}
-  //         />
-  //         <Route
-  //           path="/newratings"
-  //           element={<ProtectedRoute path="/newratings" element={NewRatings} />}
-  //         />
-  //         <Route
-  //           path="/verified"
-  //           element={<ProtectedRoute path="/verified" element={Verified} />}
-  //         />
-  //         <Route
-  //           path="/verifiedratings"
-  //           element={<ProtectedRoute path="/verifiedratings" element={VerRatings} />}
-  //         />
-  
-  //         <Route path="/auth" element={<AuthModule />} /> 
-  //         <Route path="/auth/register" element={<AuthRegister />} />
-  //         <Route path="/auth/login" element={<AuthLogin />} />
-  
-  
-  //         <Route path="*" element={<Navigate to="/auth" replace />} />
-  //       </Routes>
-  //     </Router>
     )
   }

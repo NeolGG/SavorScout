@@ -1,5 +1,5 @@
 import Parse from "parse";
-import { getRestaurantbyName } from "./RestaurantService";
+import { getRestaurantbyID } from "./RestaurantService";
 
 export let RatingsCont = {};
 RatingsCont.collection = [];
@@ -31,12 +31,12 @@ export const getAllVerifiedRatings = () => {
     });
 }
 
-export const createRating = async (rating,rest)=>{
+export const createRating = async (rating,ID)=>{
     const Rating = new Parse.Object("Rating");
     Rating.set("User",Parse.User.current());
     Rating.set("Rating",parseInt(rating));
 
-    const restObject = await getRestaurantbyName(rest);
+    const restObject = await getRestaurantbyID(ID);
 
     Rating.set("Restaurant",restObject[0]);
 
