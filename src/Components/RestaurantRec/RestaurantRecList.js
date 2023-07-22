@@ -6,14 +6,16 @@ const RestaurantRecList = ({restaurants}) => {
       <div>
         <p> </p>
         {restaurants.length > 0 && (
-          <ul>
+          <div className="restaurant-grid">
             {restaurants.map((restaurant) => (
-              <li key={"1" + restaurant.id}> 
-                {" "}
-                {restaurant.get("Name")} | {restaurant.get("Cuisine") } | {restaurant.get("Service") }
-              </li> 
+              <div className="restaurant-card" key={"1" + restaurant.id}> 
+                <img src={restaurant.get("image")} alt={restaurant.get("Name")} className="restaurant-image"/>
+                <div className="restaurant-info">  
+                  {restaurant.get("Name")} | {restaurant.get("Cuisine") } | {restaurant.get("Service") }
+                </div>
+              </div> 
             ))}
-          </ul>
+          </div>
         )}
       </div>{" "}
     </div>

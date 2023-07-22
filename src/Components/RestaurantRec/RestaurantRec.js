@@ -1,3 +1,4 @@
+import './RestaurantRec.css';
 import { useState, useEffect,React } from 'react';
 import { getAllRestaurants} from '../../common/services/RestaurantService';
 import RestaurantRecList from './RestaurantRecList';

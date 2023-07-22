@@ -1,9 +1,10 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link} from 'react-router-dom';
 import NewRatings from '../NewRatings/NewRatings';
 import Verified from '../Verified/Verified';
 import RestaurantRec from '../RestaurantRec/RestaurantRec';
 import { getCurrentUser } from '../../common/services/FriendsService';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const [user, setUser] = useState([]);
@@ -16,35 +17,35 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="dashboard">
       <h1>SavorScout </h1>
       <hr />
       <h2>Welcome {user.length > 0 ? user[0].attributes.firstName : ''}</h2> 
       {/* only loads in name if the data is there */}
       <ul>
         <li>
-          <Link to="/newratings">New Ratings</Link>
+          <Link to="/newratings" className="button">New Ratings</Link>
         </li>
         <li>
-          <Link to="/verifiedusers">Verified Users</Link>
+          <Link to="/verifiedusers" className="button">Verified Users</Link>
         </li>
         <li>
-        <Link to="/restaurantrec">Restaurants</Link>
+          <Link to="/restaurantrec" className="button">Restaurants</Link>
         </li>
         <li>
-          <Link to="/verifiedratings">Verfied ratings</Link>
+          <Link to="/verifiedratings" className="button">Verified ratings</Link>
         </li>
         <li>
-          <Link to="/writerating">Write Rating</Link>
+          <Link to="/writerating" className="button">Write Rating</Link>
         </li>
         <li>
-          <Link to="/friends">Friends</Link>
+          <Link to="/friends" className="button">Friends</Link>
         </li>
       </ul>
       <h2>Dropdown Menu items</h2>
       <ul>
         <li>
-          <Link to="/profile">Profile</Link>
+          <Link to="/profile" className="button">Profile</Link>
         </li>
       </ul>
     </div>
