@@ -3,12 +3,11 @@ import Parse from "parse";
 export let RestCont = {};
 RestCont.collection = [];
 
-export const getAllRestaurants = () => {
+export const getAllRestaurants = () => { // exports queries for filtering in "restaurantRec"
     const Restaurant = Parse.Object.extend("Restaurant");
     const query = new Parse.Query(Restaurant);
-    return query.find().then((results) => {
-        return results;
-    });
+    console.log("query",query);
+    return query;
 };
 
 export const getCuisinebyName = (name) => {
@@ -29,9 +28,9 @@ export const getServicebyName = (name) => {
     });
 };
 
-// get specific restaurant by name
-export const getRestaurantbyName = (name) =>{
-    //console.log("loooking for",name);
+
+export const getRestaurantbyName = (name) =>{ 
+    //console.log("looking for",name);
     const Restaurant = Parse.Object.extend("Restaurant");
     const query = new Parse.Query(Restaurant)
     query.equalTo("Name",name);

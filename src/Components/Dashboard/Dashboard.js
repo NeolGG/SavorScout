@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import NewRatings from '../NewRatings/NewRatings';
 import Verified from '../Verified/Verified';
 import RestaurantRec from '../RestaurantRec/RestaurantRec';
@@ -20,7 +20,7 @@ const Dashboard = () => {
       <h1>SavorScout </h1>
       <hr />
       <h2>Welcome {user.length > 0 ? user[0].attributes.firstName : ''}</h2> 
-      {/* only loads in name if the data is  */}
+      {/* only loads in name if the data is there */}
       <ul>
         <li>
           <Link to="/newratings">New Ratings</Link>
@@ -41,7 +41,9 @@ const Dashboard = () => {
           <Link to="/friends">Friends</Link>
         </li>
       </ul>
-      <Outlet />
+      <h2>Dropdown Menu items</h2>
+      <ul>
+      </ul>
     </div>
   );
 }
