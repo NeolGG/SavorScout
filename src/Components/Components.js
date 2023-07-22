@@ -26,6 +26,7 @@ export default function Components() {
         <Route path="/restaurantrec" element={<ProtectedRoute component ={RestaurantRec} />}/>
         <Route path="/verifiedratings" element={<ProtectedRoute component ={VerRatings} />}/>
         <Route path="/writerating" element= {<ProtectedRoute component={WriteRating}/>}/>
+        <Route path="/friends" element = {<ProtectedRoute component = {Friends}/>}/>
         <Route path="/auth" element={<AuthModule />} /> 
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />

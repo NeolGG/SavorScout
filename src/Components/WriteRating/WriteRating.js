@@ -1,5 +1,5 @@
 import { useState, useEffect,React } from 'react';
-import { getAllRestaurants,getRestaurantbyName } from '../../common/services/RestaurantService';
+import { getAllRestaurants } from '../../common/services/RestaurantService';
 import { createRating } from '../../common/services/RatingsService';
 import WriteRatingForm from './WriteRatingForm'
 
