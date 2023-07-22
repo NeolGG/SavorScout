@@ -43,6 +43,9 @@ const Dashboard = () => {
       </ul>
       <h2>Dropdown Menu items</h2>
       <ul>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
       </ul>
     </div>
   );
