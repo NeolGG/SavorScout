@@ -1,6 +1,7 @@
-import React,{ useState,useEffect} from 'react'
+import React,{ useState, useEffect} from 'react'
 import { getAllRatings,RatingsCont } from '../../common/services/RatingsService'
 import NewRatingsList from './NewRatingsList';
+import './NewRatings.css';  // Ensure you import your css file here
 
 const NewRatings = () => {
   const [ratings, setRatings] = useState([]);
@@ -17,16 +18,13 @@ const NewRatings = () => {
     }, []);
     
     return (
-      <div>
+      <div className="newratings-container">
           <hr />
-          These are the New ratings
+          <h2 className="newratings-header">★ New Ratings ★</h2>
           <hr/>
-          <div>
           <NewRatingsList ratings = {ratings}/>
-          </div>
       </div>
     );
-
 }
 
 export default NewRatings;

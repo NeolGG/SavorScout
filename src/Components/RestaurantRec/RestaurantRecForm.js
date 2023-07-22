@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import './RestaurantRec.css'; // Make sure to import the CSS file
 
 const RestaurantRecForm = ({onChange}) =>{
   const handleFilterChange = (event) => {
@@ -6,7 +7,7 @@ const RestaurantRecForm = ({onChange}) =>{
     onChange(name,value);
   };
   return (
-    <div>
+    <div className="filter-container">
       <hr />
       Filters
       <form>
@@ -33,4 +34,4 @@ const RestaurantRecForm = ({onChange}) =>{
   );
 }
 
-export default RestaurantRecForm
+export default RestaurantRecForm;
