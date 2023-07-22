@@ -9,6 +9,7 @@ import Verified from "./Verified/Verified";
 import VerRatings from "./VerRatings/VerRatings";
 import WriteRating from "./WriteRating/WriteRating";
 import MyProfile from "./MyProfile/MyProfile";
+import RestaurantProfile from "./RestaurantProfile/RestaurantProfile";
 
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 
@@ -29,6 +30,7 @@ export default function Components() {
         <Route path="/writerating" element= {<ProtectedRoute component={WriteRating}/>}/>
         <Route path="/friends" element = {<ProtectedRoute component = {Friends}/>}/>
         <Route path="/profile" element = {<ProtectedRoute component= {MyProfile}/>}/>
+        <Route path="/restaurantprofile/:restaurantId" element={<ProtectedRoute component={RestaurantProfile} />}/>
         <Route path="/auth" element={<AuthModule />} /> 
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />

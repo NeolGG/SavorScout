@@ -34,7 +34,7 @@ export const addFriend = (friendEmail) => {
   query.equalTo('email', friendEmail);
   query.first().then((friend) => {
     if (!friend) {
-      console.log('Friend not found with email:', friendEmail);
+      alert('Friend not found with email:' + friendEmail);
       return;
     }
 
@@ -47,7 +47,8 @@ export const addFriend = (friendEmail) => {
         return;
       }
       friendsRelation.add(friend);
-      console.log('Friend added:', friendEmail);
+      alert('Friend added:' + friendEmail);
+      window.location.reload();
       return user.save(); // Save the updated user object with the new relation
     })
       .then(() => {

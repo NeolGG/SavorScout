@@ -46,3 +46,20 @@ export const createRating = async (rating,ID)=>{
         console.error("Error saving Rating:", error);
     });
 }
+
+export const getRatingsbyRestID = async (restID) => {
+    const Rating = Parse.Object.extend("Rating");
+    const query = new Parse.Query(Rating);
+    query.include("Restaurant"); //allows pointer to be read
+    query.include("User"); // allows pointer to be read
+
+    const restObject = await getRestaurantbyID(restID);
+
+    query.equalTo("Restaurant",restObject[0]);
+
+    return query.find().then((results) => {
+        console.log("results",results);
+        return results;
+    });
+
+}
