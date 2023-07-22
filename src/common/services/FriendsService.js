@@ -7,7 +7,6 @@ export const getCurrentUser = () => {
     query.include("Friends");
     query.equalTo("objectId", user.id); // querying for users who are verified
     return query.find().then((results) => {
-
         return results;
     });
 };
@@ -27,21 +26,35 @@ export const getAllFriends = () => {
         });
       });
 }
-
-export const addFriend = (friendUserId) =>{
+export const addFriend = (friendEmail) => {
   const user = Parse.User.current();
   const User = Parse.Object.extend('User');
   const query = new Parse.Query(User);
-  query.get(friendUserId).then((friend) => {
-      const friendsRelation = user.relation('Friends');
+
+  query.equalTo('email', friendEmail);
+  query.first().then((friend) => {
+    if (!friend) {
+      console.log('Friend not found with email:', friendEmail);
+      return;
+    }
+
+    const friendsRelation = user.relation('Friends');
+    const friends = friendsRelation.query();
+    friends.equalTo('email', friendEmail);
+    friends.first().then((existingFriend) => {
+      if (existingFriend) { 
+        alert('Friend is already on the list:' + friendEmail);
+        return;
+      }
       friendsRelation.add(friend);
+      console.log('Friend added:', friendEmail);
       return user.save(); // Save the updated user object with the new relation
     })
-    .then((updatedUser) => {
-      console.log('Friend added:', friendUserId);
-      return getAllFriends();
-    })
-    .catch((error) => {
-      console.error('Error adding friend:', error);
-    });
-}
+      .then(() => {
+        return getAllFriends();
+      })
+      .catch((error) => {
+        console.error('Error adding friend:', error);
+      });
+  });
+};
