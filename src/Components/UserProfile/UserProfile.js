@@ -25,7 +25,7 @@ export default function UserProfile() {
             <div>
             {pUser ? (
                 <div>
-                    <p>{pUser.firstName}</p>
+                    <p>{pUser.firstName} {pUser.lastName} ({pUser.username})</p>
                 </div>
             ) : (
                 <p> </p>
