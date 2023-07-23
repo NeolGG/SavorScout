@@ -8,7 +8,6 @@ import NewRatings from "./NewRatings/NewRatings";
 import Verified from "./Verified/Verified";
 import VerRatings from "./VerRatings/VerRatings";
 import WriteRating from "./WriteRating/WriteRating";
-import MyProfile from "./MyProfile/MyProfile";
 import RestaurantProfile from "./RestaurantProfile/RestaurantProfile";
 import UserProfile from "./UserProfile/UserProfile";
 

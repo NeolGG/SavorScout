@@ -51,7 +51,6 @@ export const logOutUser = async() =>{
   }
 }
 
-
 export const checkUser = () => {
   return Parse.User.current()?.authenticated;
 };
