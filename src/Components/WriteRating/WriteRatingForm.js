@@ -18,7 +18,7 @@ const WriteRatingForm= ({ ratingChange, restChange, restaurants, onSubmit}) => {
           <select name = "restaurant" onChange ={restChange}>
             <option value ="">Select a restaurant</option>
             {restaurants.map((restaurant) => (
-              <option key={"1" + restaurant.id} value = {restaurant.get("Name")}>
+              <option key={restaurant.id} value = {restaurant.id}>
                 {restaurant.get("Name")}
               </option>
             ))}
