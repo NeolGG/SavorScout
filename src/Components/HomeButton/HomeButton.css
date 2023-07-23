@@ -1,0 +1,9 @@
+.title {
+    color: #7bd1e4; /* You can replace #000000 with any color code you want. */
+    text-decoration: none; /* Removes the underline. */
+  }
+  
+  .title:hover {
+    color: #7a85ea; /* Changes the color when the mouse hovers over it. Replace #ff0000 with the color code you want. */
+  }
+  
