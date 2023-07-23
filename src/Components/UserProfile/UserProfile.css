@@ -1,0 +1,7 @@
+.user-profile-page {
+    background-color: #f0db3f;
+    height: 100vh; /* This will make it extend the full height of the viewport */
+    margin: 0;
+    padding: 0;
+  }
+  

@@ -1,0 +1,18 @@
+.logout-button {
+    background-color: #f0db3f; /* Change this to the color you want */
+    color: white; /* Color of the text */
+    border: none; /* Removes the default border */
+    padding: 15px 70px; /* Vertical and horizontal padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Changes the cursor when you hover over the button */
+    transition: background-color 0.3s ease; /* Optional: Adds a transition effect when you hover over the button */
+  }
+  
+  .logout-button:hover {
+    background-color: #5ebceb; /* Change this to the color you want when hovering */
+  }
+  

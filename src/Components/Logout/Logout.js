@@ -1,5 +1,6 @@
 import React from 'react'
 import { logOutUser } from '../../common/services/AuthService'
+import './Logout.css'; // Import the CSS
 
 export default function Logout() {
     const handleLogout = async () => {
@@ -8,7 +9,7 @@ export default function Logout() {
   
     return (
       <div>
-        <button onClick={handleLogout}>Log Out</button>
+        <button className="logout-button" onClick={handleLogout}>Log Out</button>
       </div>
     );
-  }
+}

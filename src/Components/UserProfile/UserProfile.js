@@ -4,6 +4,8 @@ import { getUserByID } from '../../common/services/FriendsService';
 import { getRatingsbyUserID } from '../../common/services/RatingsService';
 import NewRatingsList from '../NewRatings/NewRatingsList';
 import HomeButton from '../HomeButton/HomeButton';
+import './UserProfile.css';
+
 
 export default function UserProfile() {
     const {userId} = useParams();
@@ -22,7 +24,7 @@ export default function UserProfile() {
     const pUser = user ? user[0].attributes :null;
 
     return (
-        <div>
+        <div className="user-profile-page">
             <HomeButton/>
             <div>
             {pUser ? (
@@ -39,6 +41,3 @@ export default function UserProfile() {
         </div>
     )
 }
-
-
-
