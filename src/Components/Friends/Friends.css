@@ -1,0 +1,71 @@
+.friends-container {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f0db3f;
+}
+
+.friends-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Five columns */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.friends-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    width: 200px; 
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.friends-info {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    background-color: white;
+}
+
+.friends-header {
+    text-align: left;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 10px 0;
+}
+
+.friends-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.friends-input {
+    margin-right: 10px;
+}
+
+.friends-submit {
+    margin-top: 10px;
+    background-color: #dc9935; 
+    color: #fff; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+.friends-submit:hover {
+    background-color: #5fb0d8; 
+}

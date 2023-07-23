@@ -1,23 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './Friends.css'; // Import the updated Friends.css file
 
-const FriendsList = ({friends}) => {
+const FriendsList = ({ friends }) => {
   return (
-    <div>
-      <hr />
-      <div>
-        <p> </p>
-        {friends.length > 0 && (
-          <ul>
-            {friends.map((friend) => (
-              <li key={"1" + friend.id}> 
-                {" "}
-                {friend.get("firstName")} {friend.get("lastName")} ({friend.get("username")})<br /> 
-                {friend.get("City")}, {friend.get("State")} 
-              </li> 
-            ))}
-          </ul>
-        )}
-      </div>{" "}
+    <div className="friends-list"> {/* Use the friends-list class */}
+      {friends.length > 0 && friends.map((friend) => (
+        <div className="friends-item" key={"1" + friend.id}>
+          <div className="friends-info"> {/* Use the friends-info class */}
+            {friend.get("firstName")} {friend.get("lastName")}
+            <br />
+            ({friend.get("username")})
+            <br />
+            {friend.get("City")}, {friend.get("State")}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
