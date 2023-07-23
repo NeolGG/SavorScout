@@ -6,7 +6,6 @@ import RestaurantRec from "./RestaurantRec/RestaurantRec";
 import Dashboard from "./Dashboard/Dashboard";
 import NewRatings from "./NewRatings/NewRatings";
 import Verified from "./Verified/Verified";
-import VerRatings from "./VerRatings/VerRatings";
 import WriteRating from "./WriteRating/WriteRating";
 import MyProfile from "./MyProfile/MyProfile";
 import RestaurantProfile from "./RestaurantProfile/RestaurantProfile";
@@ -26,7 +25,6 @@ export default function Components() {
         <Route path="/newratings" element={<ProtectedRoute component={NewRatings} />} />
         <Route path="/verifiedusers" element={<ProtectedRoute component={Verified} />} />
         <Route path="/restaurantrec" element={<ProtectedRoute component ={RestaurantRec} />}/>
-        <Route path="/verifiedratings" element={<ProtectedRoute component ={VerRatings} />}/>
         <Route path="/writerating" element= {<ProtectedRoute component={WriteRating}/>}/>
         <Route path="/friends" element = {<ProtectedRoute component = {Friends}/>}/>
         <Route path="/profile" element = {<ProtectedRoute component= {MyProfile}/>}/>

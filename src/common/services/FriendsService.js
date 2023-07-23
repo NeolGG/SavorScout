@@ -5,11 +5,20 @@ export const getCurrentUser = () => {
     const User = Parse.Object.extend("User");
     const query = new Parse.Query(User);
     query.include("Friends");
-    query.equalTo("objectId", user.id); // querying for users who are verified
+    query.equalTo("objectId", user.id);
     return query.find().then((results) => {
         return results;
     });
 };
+
+export const getUserByID = (userID) =>{
+  const User = Parse.Object.extend("User");
+  const query = new Parse.Query(User);
+  query.equalTo("objectId", userID);
+  return query.find().then((result) => {
+    return result;
+});
+}
 
 export const getAllFriends = () => {
     const user = Parse.User.current();
