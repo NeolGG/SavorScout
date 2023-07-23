@@ -1,11 +1,10 @@
+// AuthForm.js
 import React from "react";
-
+import "./Auth.css"; // Import the styles
 const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
-
   return (
-    <form onSubmit={onSubmit} autoComplete="off">
-      {/* Conditionally render first name and last name inputs if not in login mode */}
-      {!isLogin ? (
+    <form onSubmit={onSubmit} autoComplete="off" className="auth-container"> {/* Use the auth-container class */}
+      {!isLogin && (
         <div>
           <div className="form-group">
             <label>First Name</label>
@@ -17,7 +16,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
               value={user.firstName}
               onChange={onChange}
               name="firstName"
-              placeholder="first name"
+              placeholder="First name"
               required
             />
           </div>
@@ -31,14 +30,12 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
               value={user.lastName}
               onChange={onChange}
               name="lastName"
+              placeholder="Last name"
               required
             />
           </div>
         </div>
-      ) : (
-        <></>
       )}
-
       {/* Email input */}
       <div className="form-group">
         <label>Email</label>
@@ -53,7 +50,6 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           required
         />
       </div>
-
       {/* Password input */}
       <div className="form-group">
         <label>Password</label>
@@ -69,15 +65,30 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           required
         />
       </div>
-
+      {!isLogin && (
+        // Password confirmation input for sign-up form
+        <div className="form-group">
+          <label>Confirm Password</label>
+          <br />
+          <input
+            type="password"
+            className="form-control"
+            id="password-confirm-input"
+            value={user.passwordConfirm}
+            onChange={onChange}
+            name="passwordConfirm"
+            min="0"
+            required
+          />
+        </div>
+      )}
       {/* Submit button */}
       <div className="form-group">
-        <button type="submit" className="btn btn-primary" onSubmit={onSubmit}>
-          Submit
+        <button type="submit" className="auth-button" onSubmit={onSubmit}>
+          {isLogin ? "Login" : "Sign Up"} {/* Show "Login" or "Sign Up" based on isLogin prop */}
         </button>
       </div>
     </form>
   );
 };
-
 export default AuthForm;
