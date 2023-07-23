@@ -17,10 +17,12 @@ export default function WriteRating() {
     const [temp2,set2Temp] = useState("");
 
     const handleRestChange  = (event) => {
+        console.log(event.target.value);
         setTemp(event.target.value);
       };
 
     const handleRatingChange = (event) =>{
+        console.log(event.target.value)
         set2Temp(event.target.value);
     }
 

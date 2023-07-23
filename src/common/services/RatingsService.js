@@ -42,6 +42,8 @@ export const createRating = async (rating,ID)=>{
 
     Rating.save().then((savedRating) => {
         console.log("Rating saved:", savedRating);
+        alert('Rating added');
+        window.location.reload();
     }).catch((error) => {
         console.error("Error saving Rating:", error);
     });
