@@ -19,6 +19,9 @@ export const getAllVerifiedRatings = () => {
     const query = new Parse.Query(Rating); //Ratings Query
     query.include("Restaurant");
     query.include("User");
+    query.find().then((results)=>{
+        console.log("reuslts",results);
+    })
 
     const User = Parse.Object.extend("User"); // makes new object with the user class
     const userQuery = new Parse.Query(User); // gets query of users 
