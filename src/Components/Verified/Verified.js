@@ -2,7 +2,6 @@ import './Verified.css';
 import React, { useState, useEffect } from 'react';
 import { getAllVerifiedUsers, VerifiedCont } from '../../common/services/VerifiedService';
 import VerifiedList from './VerifiedList';
-import { RatingsCont } from '../../common/services/RatingsService';
 
 const Verified = () => {
   const [users, setUsers] = useState([]);

@@ -2,6 +2,7 @@ import React,{ useState, useEffect} from 'react'
 import { getAllRatings,RatingsCont } from '../../common/services/RatingsService'
 import NewRatingsList from './NewRatingsList';
 import './NewRatings.css';  
+
 const NewRatings = () => {
   const [ratings, setRatings] = useState([]);
 
@@ -10,7 +11,6 @@ const NewRatings = () => {
         setRatings(RatingsCont.collection);
       } else {
         getAllRatings().then((ratings) => {
-          console.log(ratings);
           setRatings(ratings);
         });
       }

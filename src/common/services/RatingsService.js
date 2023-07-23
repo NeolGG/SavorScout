@@ -75,12 +75,12 @@ export const getRatingsbyUserID = async (userId) => {
     query.include("Restaurant"); //allows pointer to be read
     query.include("User"); // allows pointer to be read
 
-    const restObject = await getUserByID(restID);
+    const restObject = await getUserByID(userId);
 
     query.equalTo("User",restObject[0]);
 
     return query.find().then((results) => {
-        console.log("results",results);
+        console.log(" ratresults",results);
         return results;
     });
 }

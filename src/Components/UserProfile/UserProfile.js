@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getUserByID } from '../../common/services/FriendsService';
+import { getRatingsbyUserID } from '../../common/services/RatingsService';
+import NewRatingsList from '../NewRatings/NewRatingsList';
 
 export default function UserProfile() {
     const {userId} = useParams();
     const [user, setUser] = useState();
+    const [ratings, setRatings] = useState();
 
     useEffect(() => {
         getUserByID(userId).then((user) => {
             setUser(user);
+        })
+        getRatingsbyUserID(userId).then((ratings)=>{
+            setRatings(ratings);
         })
     },[userId]);
 
@@ -16,6 +22,7 @@ export default function UserProfile() {
 
     return (
         <div>
+            <div>
             {pUser ? (
                 <div>
                     <p>{pUser.firstName}</p>
@@ -23,10 +30,11 @@ export default function UserProfile() {
             ) : (
                 <p> </p>
             )}
+            </div>
+            <NewRatingsList ratings ={ratings}/>
         </div>
     )
 }
 
 
 
-    
