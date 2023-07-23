@@ -1,0 +1,57 @@
+.verratings-container {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f0db3f;
+}
+
+.verratings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.verratings-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.verratings-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    background-color: white;
+}
+
+.verratings-header {
+    text-align: center;
+}
+
+.verratings-title {
+    text-align: center;
+    font-size: 2em; 
+    font-weight: bold;
+    color: #121211; 
+    padding: 20px 0;
+}
+
+.verratings-divider {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 20px 0;
+}
+
