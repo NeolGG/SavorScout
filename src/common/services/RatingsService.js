@@ -1,5 +1,6 @@
 import Parse from "parse";
 import { getRestaurantbyID } from "./RestaurantService";
+import { getUserByID } from "./FriendsService";
 
 export let RatingsCont = {};
 RatingsCont.collection = [];
@@ -66,5 +67,20 @@ export const getRatingsbyRestID = async (restID) => {
         console.log("results",results);
         return results;
     });
+}
 
+export const getRatingsbyUserID = async (userId) => {
+    const Rating = Parse.Object.extend("Rating");
+    const query = new Parse.Query(Rating);
+    query.include("Restaurant"); //allows pointer to be read
+    query.include("User"); // allows pointer to be read
+
+    const restObject = await getUserByID(restID);
+
+    query.equalTo("User",restObject[0]);
+
+    return query.find().then((results) => {
+        console.log("results",results);
+        return results;
+    });
 }
