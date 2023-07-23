@@ -39,9 +39,6 @@ const Dashboard = () => {
         <li>
           <Link to="/friends" className="button">Friends</Link>
         </li>
-      </ul>
-      <h2>Dropdown Menu items</h2>
-      <ul>
         <li>
           <Link to={`/profile/${user.length > 0 ? user[0].id : ''}`} className="button">Profile</Link>
         </li>
