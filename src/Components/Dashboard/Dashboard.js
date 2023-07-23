@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { Link} from 'react-router-dom';
-import NewRatings from '../NewRatings/NewRatings';
-import Verified from '../Verified/Verified';
-import RestaurantRec from '../RestaurantRec/RestaurantRec';
 import { getCurrentUser } from '../../common/services/FriendsService';
 import './Dashboard.css';
 
@@ -45,7 +42,7 @@ const Dashboard = () => {
       <h2>Dropdown Menu items</h2>
       <ul>
         <li>
-          <Link to="/profile" className="button">Profile</Link>
+          <Link to={`/profile/${user.length > 0 ? user[0].id : ''}`} className="button">Profile</Link>
         </li>
       </ul>
     </div>
