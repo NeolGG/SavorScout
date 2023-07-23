@@ -2,6 +2,7 @@ import './VerRatings.css';
 import React, {useState,useEffect} from 'react'
 import { RatingsCont, getAllVerifiedRatings } from '../../common/services/RatingsService'
 import VerRatingsList from './VerRatingsList'
+import HomeButton from '../HomeButton/HomeButton';
 
 const VerRatings = () => {
   const [vRatings, setvRatings] = useState([]);
@@ -18,6 +19,7 @@ const VerRatings = () => {
 
   return (
     <div className="verratings-container">
+        <HomeButton/>
       <hr className="verratings-divider"/>
       <div className="verratings-title">★ Verified Ratings ★</div>
       <hr className="verratings-divider"/>

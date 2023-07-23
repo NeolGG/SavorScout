@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link} from 'react-router-dom';
 import { getCurrentUser } from '../../common/services/FriendsService';
 import './Dashboard.css';
+import Logout from '../Logout/Logout';
 
 const Dashboard = () => {
   const [user, setUser] = useState([]);
@@ -44,6 +45,8 @@ const Dashboard = () => {
         <li>
           <Link to={`/profile/${user.length > 0 ? user[0].id : ''}`} className="button">Profile</Link>
         </li>
+        <br/>
+        <Logout/>
       </ul>
     </div>
   );

@@ -40,6 +40,18 @@ export const loginUser = (currUser) => {
     });
 };
 
+export const logOutUser = async() =>{
+  const currentUser = Parse.User.current();
+  if (currentUser) {
+    await Parse.User.logOut();
+    window.location.reload();
+    console.log('User logged out');
+  } else {
+    console.log('No user logged in');
+  }
+}
+
+
 export const checkUser = () => {
   return Parse.User.current()?.authenticated;
 };
