@@ -40,21 +40,7 @@ export default function Friends() {
       <hr /> {/* Add a line above the header */}
       <FriendsList friends={friends} />
       <hr /> {/* Add a line below the header */}
-      <div className="friends-form"> {/* Use the friends-form class */}
-        <form onSubmit={handleOnSubmit}>
-          <label className="friends-input"> {/* Use the friends-input class */}
-            Add a Friend
-            <input
-              type="text"
-              placeholder="Friend Email"
-              onChange={handleFriendChange}
-            />
-          </label>
-          <button type="submit" className="friends-submit"> {/* Use the friends-submit class */}
-            Submit
-          </button>
-        </form>
-      </div>
+      <FriendsForm onSubmit={handleOnSubmit} friendChange={handleFriendChange}/>
     </div>
   );
 }
