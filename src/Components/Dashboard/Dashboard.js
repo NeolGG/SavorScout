@@ -33,6 +33,9 @@ const Dashboard = () => {
           <Link to="/restaurantrec" className="button">Restaurants</Link>
         </li>
         <li>
+          <Link to="/verifiedratings" className="button">Verified ratings</Link>
+        </li>
+        <li>
           <Link to="/writerating" className="button">Write Rating</Link>
         </li>
         <li>

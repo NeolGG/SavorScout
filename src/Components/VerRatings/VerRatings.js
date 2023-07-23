@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { RatingsCont, getAllVerifiedRatings } from '../../common/services/RatingsService'
-import VerRatingsList from './VerRatingsList'
+import VerRatingsList from './VerRatingsList';
 
 const VerRatings = () => {
   const [vRatings, setvRatings] = useState([]);

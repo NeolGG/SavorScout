@@ -17,7 +17,7 @@ export const getUserByID = (userID) =>{
   query.equalTo("objectId", userID);
   return query.find().then((result) => {
     return result;
-});
+  });
 }
 
 export const getAllFriends = () => {
