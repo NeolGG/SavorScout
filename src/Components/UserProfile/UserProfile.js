@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getUserByID } from '../../common/services/FriendsService';
 import { getRatingsbyUserID } from '../../common/services/RatingsService';
 import NewRatingsList from '../NewRatings/NewRatingsList';
+import HomeButton from '../HomeButton/HomeButton';
 
 export default function UserProfile() {
     const {userId} = useParams();
@@ -22,10 +23,13 @@ export default function UserProfile() {
 
     return (
         <div>
+            <HomeButton/>
             <div>
             {pUser ? (
                 <div>
                     <p>{pUser.firstName} {pUser.lastName} ({pUser.username})</p>
+                    <p>City: {pUser.City}</p>
+                    <p>City: {pUser.State}</p>
                 </div>
             ) : (
                 <p> </p>

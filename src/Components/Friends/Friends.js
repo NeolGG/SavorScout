@@ -4,6 +4,7 @@ import FriendsList from './FriendsList';
 import FriendsForm from './FriendsForm';
 import { addFriend } from '../../common/services/FriendsService';
 import './Friends.css'; // Import the updated Friends.css file
+import HomeButton from '../HomeButton/HomeButton';
 
 export default function Friends() {
   const [user, setUser] = useState([]);
@@ -36,7 +37,8 @@ export default function Friends() {
 
   return (
     <div className="friends-container"> {/* Use the friends-container class */}
-      <h1 className="friends-header">Richie's Friends</h1> {/* Use the friends-header class */}
+         <HomeButton/>
+      <h1 className="friends-header">{user.length > 0 ? user[0].attributes.firstName : ''}'s Friends</h1> {/* Use the friends-header class */}
       <hr /> {/* Add a line above the header */}
       <FriendsList friends={friends} />
       <hr /> {/* Add a line below the header */}

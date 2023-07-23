@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomeButton from '../HomeButton/HomeButton';
 
 const VerifiedList = ({ users }) => {
   return (
     <div className="verified-container">
+      <HomeButton/>
       <h1 className="verified-title">⭐ Verified Users ⭐</h1>
       {users.length > 0 && (
         <div className="verified-grid">

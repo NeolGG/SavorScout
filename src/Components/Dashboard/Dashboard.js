@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>SavorScout </h1>
+      <h1><Link to="/" className="title">SavorScout</Link></h1>
       <hr />
       <h2>Welcome {user.length > 0 ? user[0].attributes.firstName : ''}</h2> 
       {/* only loads in name if the data is there */}

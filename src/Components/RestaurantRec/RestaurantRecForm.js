@@ -29,6 +29,12 @@ const RestaurantRecForm = ({onChange}) =>{
           <option value="fast food">Fast Food</option>
           <option value="dine-in">Dine-in</option>
         </select>
+        <select name = "price" onChange={handleFilterChange}>
+          <option value="">All</option>
+          <option value="$">$</option>
+          <option value="$$">$$</option>
+          <option value="$$$">$$$</option>
+        </select>
       </form>
     </div>
   );
