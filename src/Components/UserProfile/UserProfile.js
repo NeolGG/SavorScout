@@ -31,7 +31,7 @@ export default function UserProfile() {
                 <div>
                     <p>{pUser.firstName} {pUser.lastName} ({pUser.username})</p>
                     <p>City: {pUser.City}</p>
-                    <p>City: {pUser.State}</p>
+                    <p>State: {pUser.State}</p>
                 </div>
             ) : (
                 <p> </p>
