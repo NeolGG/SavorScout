@@ -47,3 +47,7 @@ To install all the required packages run the following command:
 After all the prerequisites, run the following command to start the website:
 
     npm start
+
+<!-- MARKDOWN LINKS & IMAGES --> 
+[Neol-url]:https://www.linkedin.com/in/neolgutierrez/ 
+[Eddie-url]:https://www.linkedin.com/in/eddie-mayor-b457bb229/
